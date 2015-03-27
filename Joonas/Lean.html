@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<!-- Copyright: Daemon Pty Limited 2006, http://www.daemon.com.au
+
+     This program is free software: you can redistribute it and/or modify
+
+     it under the terms of the GNU General Public License as published by
+
+     the Free Software Foundation, either version 2 of the License, or
+
+     (at your option) any later version.
+
+
+
+     This program is distributed in the hope that it will be useful,
+
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+     GNU General Public License for more details.
+
+
+
+     You should have received a copy of the GNU General Public License
+
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Total Quality Management</title>
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="css/main.css" media="screen">
+
+  
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+
+<!--[if lte IE 6]>
+
+    <link rel="stylesheet" type="text/css" href="css/ie6_or_less.css" />
+
+<![endif]-->
+  
+  <script type="text/javascript" src="js/common.js"></script>
+</head><body id="type-b">
+<div id="wrap">
+<div id="header">
+<div id="site-name">Total Quality Management</div>
+</div>
+<div id="content-wrap"><!-- TODO: add sidebar navigation. -->
+<div id="content">
+<div id="breadcrumb"> <a href="homepage.cfm">Home</a> / <a href="devtodo">Section Name</a> / <strong>Page Name</strong> </div>
+<h1>DESIGN OF EXPERIMENTS</h1>
+<h2>Design Steps </h2>
+<p>The design of an experiment involves the following steps: </p>
+<ol>
+  <li>Selection of independent variables</li>
+  <li>Selection of number of level settings for each independent
+variable</li>
+  <li>Selection of orthogonal array </li>
+  <li>Assigning the independent variables to each column </li>
+  <li>Conducting the experiments </li>
+  <li>Analyzing the data </li>
+  <li>Inference </li>
+</ol>
+<p>The details of the above steps are given below.</p>
+<hr>
+<h2>1. Selection of the independent variables</h2>
+<p>Before conducting the experiment, the knowledge of the
+product/process under investigation is of prime importance for
+identifying the factors likely to influence the outcome. In order to
+compile a comprehensive list of factors, the input to the experiment is
+generally obtained from all the people involved in the project. </p>
+<h2>2. Deciding the number of levels</h2>
+<p> Once the independent variables are decided, the number of levels
+for each variable is decided. The selection of number of levels depends
+on how the performance parameter is affected due to different level
+settings. If the performance parameter is a linear function of the
+independent variable, then the number of level setting shall be 2.
+However, if the independent variable is not linearly related, then one
+could go for 3, 4 or higher levels depending on whether the
+relationship is quadratic, cubic or higher order. In the absence of
+exact nature of relationship between the independent variable and the
+performance parameter, one could choose 2 level settings. After
+analyzing the experimental data, one can decide whether the assumption
+of level setting is right or not based on the percent contribution and
+the error calculations.
+</p>
+<h2>3. Selection of an orthogonal array</h2>
+<p> Before selecting the orthogonal array, the minimum number of
+experiments to be conducted shall be fixed based on the total number of
+degrees of freedom present in the study. The minimum number of
+experiments that must be run to study the factors shall be more than
+the total degrees of freedom available. In counting the total degrees
+of freedom the investigator commits 1 degree of freedom to the overall
+mean of the response under study. The number of degrees of freedom
+associated with each factor under study equals one less than the number
+of levels available for that factor. Hence the total degrees of freedom
+without interaction effect is 1+ as given by equation 2.1. For example,
+in
+case of 11 independent variables, each having 2 levels, the
+total degrees of freedom is 12. Hence the selected orthogonal array
+shall have at least 12 experiments. An L12 orthogonal satisfies this
+requirement. Once the minimum number of experiments is decided, the
+further selection of orthogonal array is based on the number of
+independent variables and number of factor levels for each independent
+variable.
+</p>
+<img style="width: 516px; height: 152px;" src="/Users/joonasrehand/GitHub/web-tutorial/Joonas/experiments3.gif">
+<h2>4. Assigning the independent variables to columns</h2>
+<p> The order in which the independent variables are assigned to the
+vertical column is very essential. In case of mixed level variables and
+interaction between variables, the variables are to be assigned at
+right columns as stipulated by the orthogonal array.
+Finally, before conducting the experiment, the actual level values of
+each design variable shall be decided. It shall be noted that the
+significance and the percent contribution of the independent variables
+changes depending on the level values assigned. It is the designers
+responsibility to set proper level values.
+</p>
+<h2>5. Conducting the experiment</h2>
+<p> Once the orthogonal array is selected, the experiments are
+conducted as per the level combinations. It is necessary that all the
+experiments be conducted. The interaction columns and dummy variable
+columns shall not be considered for conducting the experiment, but are
+needed while analyzing the data to understand the interaction effect.
+The performance parameter under study is noted down for each experiment
+to conduct the sensitivity analysis.
+</p>
+<h2>6. Analysis of the data </h2>
+<p> Since each experiment is the combination of different factor
+levels, it is essential to segregate the individual effect of
+independent variables. This can be done by summing up the performance
+parameter values for the corresponding level settings. For example, in
+order to find out the main effect of level 1 setting of the independent
+variable 2 (“Introduction to Taguchi Method” Table 2.1), sum the
+performance parameter values of the experiments 1, 4 and 7. Similarly
+for level 2, sum the experimental results of 2, 5 and 7 and so on. Once
+the mean value of each level of a particular independent variable is
+calculated, the sum of square of deviation of each of the mean value
+from the grand mean value is calculated. This sum of square deviation
+of a particular variable indicates whether the performance parameter is
+sensitive to the change in level setting. If the sum of square
+deviation is close to zero or insignificant, one may conclude that the
+design variable is not influencing the performance of the process. In
+other words, by conducting the sensitivity analysis, and performing
+analysis of variance (ANOVA), one can decide which independent factor
+dominates over other and the percentage contribution of that particular
+independent variable. </p>
+<h2>7. Inference </h2>
+<p> From the above experimental analysis, it is clear that the higher
+the value of sum of square of an independent variable, the more it has
+influence on the performance parameter. One can also calculate the
+ratio of individual sum of square of a particular independent variable
+to the total sum of squares of all the variables. This ratio gives the
+percent contribution of the independent variable on the performance
+parameter. </p>
+<p> Source: http://www.ecs.umass.edu/mie/labs/mda/fea/sankar/chap2.html </p>
+<div class="pagination">
+<p> <span><strong>Previous</strong></span> <span>1</span> <a href="devtodo">2</a> <a href="devtodo">3</a> <a href="devtodo">4</a>
+<a href="devtodo">5</a> <a href="devtodo"><strong>Next</strong></a> </p>
+<h4>Page 1 of 5</h4>
+</div>
+<hr>
+<div id="footer">
+<p>A note here to go in the footer</p>
+<p> <a href="#">Contact Us</a> | <a href="#">Privacy</a> | <a href="#">Links</a></p>
+</div>
+</div>
+<div id="poweredby"> <a href="http://farcry.daemon.com.au/"> <img src="wsimages/mollio.gif" alt="FarCry - Mollio"> </a> </div>
+</div>
+</div>
+
+</body></html>
