@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<!-- Copyright: Daemon Pty Limited 2006, http://www.daemon.com.au
+
+     This program is free software: you can redistribute it and/or modify
+
+     it under the terms of the GNU General Public License as published by
+
+     the Free Software Foundation, either version 2 of the License, or
+
+     (at your option) any later version.
+
+
+
+     This program is distributed in the hope that it will be useful,
+
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+     GNU General Public License for more details.
+
+
+
+     You should have received a copy of the GNU General Public License
+
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Total Quality Management</title>
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="css/main.css" media="screen">
+
+  
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+
+<!--[if lte IE 6]>
+
+    <link rel="stylesheet" type="text/css" href="css/ie6_or_less.css" />
+
+<![endif]-->
+  
+  <script type="text/javascript" src="js/common.js"></script>
+</head><body id="type-b">
+<div id="wrap">
+<div id="header">
+<div id="site-name">Total Quality Management</div>
+</div>
+<div id="content-wrap"><!-- TODO: add sidebar navigation. -->
+<div id="content">
+<div id="breadcrumb"> <a href="homepage.cfm">Home</a> / <a href="devtodo">Section Name</a> / <strong>Page Name</strong> </div>
+<h1>SCREENING</h1>
+<h2>Introduction </h2>
+<p>Screening designs are useful as they are a practical compromise
+between cost and information. Their main contribution is in suggesting
+which of many factors that may impact a result are actually the most
+important. Because screening designs require fewer runs, they are far
+less costly than the more informative full-factorial designs where the
+practitioner uses all combinations of factor levels. Screening runs are
+usually a prelude to further
+experimentation, namely the response surface and confirmatory runs,
+where specific information is gained around target (desired) outcomes. </p>
+<hr>
+<h2>Key Assumption For Screening Studies </h2>
+<p>In screening designs, we make the assumption that our real-world
+processes are driven by only a few factors, the others being relatively
+unimportant. This usually works quite well but it is a crucial
+assumption that requires careful consideration by subject matter
+experts. Also keep in mind that the fractional factorial designs may be
+upgraded to full factorial designs (main effects plus all interactions)
+if there are only a few main effects. This allows us to observe
+interactions at a reasonable cost. </p>
+<h2>Number Of Runs </h2>
+<p> With screening designs, responses are taken only for a small
+fraction of the total possible combinations to reduce the number of
+runs and thus cost. The total number of runs is calculated by raising
+the number of levels to the power of the number of factors (e.g., for
+three factors at two levels each we have runs = 2^3 = 2x2x2 = 8). This
+is actually a full factorial design as we are testing all combinations
+of factor levels. Full factorial designs allow us to build predictive
+models that include the main effects of each factor as well as
+interactions. This brings us to three important concepts of these
+models: interaction (the effects of one factor on another),
+orthogonality (all factors are independent of one another), and
+aliasing (when the effects due to multiple factors cannot be
+distinguished). </p>
+<h2>Interactions</h2>
+<p> One of the more important things that practitioners need to know
+about is that main factors may affect each other in ways known and
+unknown (i.e., interaction among effects). For example, the interaction
+of two reagents in a chemical process may be a significant driver of
+the overall process(think enzyme and substrate). In deciding which are
+important, statistically and physically, it is necessary to consult
+with the bench scientists and technicians to get a handle on what is
+already known and suspected to be important to the process. Too few
+factors risk missing something important. Including too many factors
+will render the screening more costly and lead to a lack of
+orthogonality due to aliasing. Aliasing occurs when two columns in the
+design (referred to by statisticians as a vector of the input space)
+are identical or when one column is identical to another formed from
+the interaction of two columns (i.e. the “vector” or “dot” product of
+two columns). </p>
+<img style="width: 218px; height: 218px;" src="/Users/joonasrehand/GitHub/web-tutorial/Joonas/table1.png">
+<p>Figure 1 presents a design table for a full factorial design in
+three factors </p>
+<p>This design requires eight trials (rows) and has three factors (A,
+B, C) for which we can estimate main effects. It is also possible to
+estimate all possible two-way interactions with this design (AB,
+AC,BC)as well as the single three-way interaction ABC that is shown in
+the design table. If later, the design is augmented with a fourth
+factor D (all runs not shown below), we have a problem. Now the
+contribution to any measured outcome (effect) from ABC is
+indistinguishable from D and, therefore, we do not know if the driver
+was D or ABC. The A, B, and C columns give the levels (coded +/-) of
+four experimental design factors. The ABC interaction column is formed
+as the “dot” product of the A, B, and C columns. Notice how each row in
+the ABC column is formed as a product of the corresponding levels of A,
+B, and C. In the analysis of such a design, the ABC interaction column
+would be used to estimate the corresponding ABC interaction effect. The
+sums of the levels of the A, B, C, and ABC columns all equal zero. This
+means that the design is balanced. Balanced designs give more precise
+estimates of main and interaction effects than unbalanced designs. </p>
+<h2>Orthogonality </h2>
+<p> Further, the “dot” product of any two of the columns A, B, C, or
+ABC will also sum to zero (try it and see). This more subtle design
+characteristic is called “orthogonality” and is critical to good
+experimental design. To understand why orthogonality is so important,
+we return to our concept of aliasing. Aliasing is the extreme absence
+of orthogonality. It is impossible to separately estimate the effects
+corresponding to two design columns that are aliased. In a sense, such
+estimates are 100% correlated (the statistical term is “confounded”).
+In contrast, when two design columns are orthogonal, the corresponding
+effect estimates have zero correlation. This means that errors in
+estimating one effect do not, on average, bias our estimate of the
+other effect. Orthogonal designs prevent us from accidentally confusing
+the effects of two different factors. DOE software provides us with
+orthogonal (or nearly orthogonal) screening designs in which the main
+effect and interaction columns are not aliased. These allow us to
+estimate the corresponding effects without worrying about possible
+correlations. This lack of correlation usually implies that the
+estimates are independent. </p>
+<img style="width: 203px; height: 203px;" src="/Users/joonasrehand/GitHub/web-tutorial/Joonas/orthogonality.png">
+<p> Figure 2: Orthogonality.
+</p>
+<p> Figure 2 gives a good mental image of the value of orthogonality
+and the independence it provides in our estimates. Let the three
+mutually perpendicular (orthogonal) axes X, Y, and Z represent
+dimensions along which three estimates from some experimental design
+may lie. The results of an experiment may then be indicated as a point
+in that three dimensional space. If we repeat the experiment many
+times, the resulting estimates will form a cluster of points in space,
+centered about the “true” effects being estimated. With orthogonal
+designs, the cluster of points will be spherical in shape indicating a
+lack of correlation (or independence) among the estimates. In designs
+with aliasing, the points will fall along a one-dimensional line or
+two-dimensional plane that indicate a complete correlation of three or
+two effects, respectively. In between these extremes will be designs
+that will produce ellipsoid-shaped clusters, whose axes are not
+parallel to X, Y, and Z. Such designs are less efficient than fully
+orthogonal designs and may result in misinterpretation of screening
+results. Similarly, when the columns in our experimental design are
+unaliased and when the vector products of any two columns sum to zero,
+the corresponding effect estimates are mutually independent. This means
+that random errors in estimating one effect will not (on average) bias
+the estimate of another effect. Designing for orthogonality is
+excellent protection against aliasing. </p>
+<h2>Aliasing</h2>
+<p> Once the orthogonal array is selected, the experiments are
+conducted as per the level combinations. It is necessary that all the
+experiments be conducted. The interaction columns and dummy variable
+columns shall not be considered for conducting the experiment, but are
+needed while analyzing the data to understand the interaction effect.
+The performance parameter under study is noted down for each experiment
+to conduct the sensitivity analysis.
+</p>
+<h2>General Techniques </h2>
+<p> In most modern software it is a straightforward matter to design an
+experiment and analyze the results (with a little practice and much
+consulting of the manual). It’s the decision as to what factors to
+include that is critical. It is strongly advised
+that you not throw in “everything and the kitchen sink” for fear of
+missing something. This is where consultation with subject matter
+experts like the process engineers and bench scientists familiar with
+the process or product is crucial. </p>
+<img style="width: 380px; height: 380px;" src="/Users/joonasrehand/GitHub/web-tutorial/Joonas/example.png">
+<p>Figure 3: An example of an experimental design produced by the JMP
+software.</p>
+<p>The software allows fast generation of an experimental sheet showing
+the factors and their levels, plus a column for the results. This
+design has three input factors (X1-X3) and a single output (Y). The
+levels indicate low (-1), median (0), and high (1) levels of the
+factor. The trials for which all factors are at their median level are
+called “center points” and may represent target or control factor
+settings. The 000 points are the center points and are useful for
+testing linearity in the process. It is a simple and inexpensive way to
+check for curvature. We now have nine design points, each replicated
+twice to yield 18 runs. This design is a full factorial design in which
+each of the nine trials in the full factorial is replicated twice.
+Replication is sometimes needed to provide sufficient statistical
+power. These factor levels are obviously coded but the actual numbers
+could be entered and more factors screened against multiple outputs, if
+desired. </p>
+<h2>Other Designs </h2>
+<p>Fractional and full factorials are not the only screening designs
+available. The following are among the most popular: </p>
+<ol>
+  <li>Plackett-Burman. Resolution is higher than simple factorial and
+this is a good technique for large numbers of input factors. Also more
+flexible as the runs need not be a power of 2. All columns are balanced
+and pairwise orthogonal.</li>
+  <li>Box-Behnken. Efficient technique for modeling quantitative
+three-level factors. Hold some of the factors at their centerpoints and
+are easily blocked.</li>
+  <li>Box-Wilson. These are central composite designs that may be used
+when significant interaction is suspected. They have the desirable
+property of rotatability where the predicted response may be estimated
+with equal variance from any direction from the center of the design
+space. </li>
+</ol>
+<h2>Worked Example </h2>
+<p>The medical diagnostics industry makes great use
+of DOE for myriad products. In this example, we will look at the design
+and analysis of a clinical laboratory kit pack for an unspecified
+analyte.
+We wish to determine and minimize the product variability given certain
+known conditions of reagent concentration and physical/environmental
+factors for the chemical reactions occurring in the kit pack. The input
+factors are as follows: </p>
+<ol>
+  <li>Reagent 1</li>
+  <li>Reagent 2</li>
+  <li>Enzyme Temperature</li>
+  <li>Mixing speed</li>
+</ol>
+<p>In this example, the two reagents are combined with the enzyme in a
+reaction vessel at a specified temperature. The mixture is agitated at
+several mixing speeds and the researcher wants to know how important
+each of the factors (i.e., reagents, enzyme, temp, and mix speed) is to
+the concentration of the final product. All are held at either low,
+median, or high levels. The single output (response) variable is the
+concentration of the product. We will minimize the variability of the
+concentration measurement (i.e., for the given inputs we wish to hold
+the measured concentration to be within a stated reference range with
+minimal variability). This reference range could be from the clinical
+range for that particular analyte in human fluids or dictated by the
+company quality document. </p>
+<p>
+With five factors, the full factorial design would 2^5=32 trials;
+however, that is about twice as many trials as our budget will allow.
+Also, our statistician informs us that the addition of center points in
+the design will increase efficiency and replicates are necessary to
+evaluate random error. Our experiment will require four sessions to
+complete, and we are concerned that experimental conditions may vary
+from session to session. We would like to design the experiment in some
+way so that any session differences are not misconstrued as factor
+effects. So our statistician suggests the use of blocking in our
+design. Blocking is the arranging of experimental units (the runs) in
+groups, or blocks, that are similar to one another.</p>
+<p>
+We block our designs to reduce random noise between sessions (in this
+case) as the experiment was carried out over several time periods and
+we expect the data within any one block to be more homogeneous than
+that between blocks. Thus, greater precision is obtained by doing
+within-block comparisons, as inter-block differences are eliminated.
+Also runs are randomized within a block, and block order may
+be randomized if necessary. Note that although this screen is designed
+for maximal efficiency and precision, only main effects order effects
+may be estimated. After gaining management approval for the cost, we
+obtain the design using JMP software. Note that the block column here
+indicates the session in which to perform each trial (see Figure 4). </p>
+<img style="width: 380px; height: 380px;" src="/Users/joonasrehand/GitHub/web-tutorial/Joonas/example2.png">
+<p>Figure 4: Example problem screening design. </p>
+<p>Notice that we have five factors and that a full factorial design
+would require 2^5 or 32 runs yet our design only has 18. The reduction
+comes in an aspect of DOE called design efficiency. This is a measure
+of the efficiency of any given design in covering the design space,
+compared to a 100% efficient design that would cover all of the points
+needed to extract maximal information about the dependency of the
+results upon the input factors. Modern DOE software employs highly
+efficient algorithms based upon some very complex mathematics that will
+reduce the number of points needed while minimally impacting
+efficiency. </p>
+<p>Having designed the experiment, we go into the lab and collect the
+data then return to the JMP design table and fill in the Y column of
+the table (see Figure 5). The data can be analyzed in JMP. The first
+step
+is to specify the model. The model can then be automatically generated
+as an effect screen using JMPs standard least squares platform. The
+model contains a “list” of all the factor effects that we wish (and are
+able) to estimate. Our estimates will include the five main factor
+effects, the block effect and the two-way interaction between reagents
+1 and 2. </p>
+<img style="width: 380px; height: 380px;" src="/Users/joonasrehand/GitHub/web-tutorial/Joonas/example3.png">
+<p>Figure 5: Test Data </p>
+<p>Running this model shows us an actual vs. predicted plot for the
+product (see Figure 6). </p>
+<img style="width: 380px; height: 380px;" src="/Users/joonasrehand/GitHub/web-tutorial/Joonas/outcomes.png">
+<p>Figure 6: Results for example </p>
+<p>As the p-value from the analysis of variance shows that the model is
+very significant (p&lt;&lt; 0.01), the R-squared is 92% and the
+estimate of the standard deviation of the process noise (RMSE) is quite
+low, we are initially happy with the model fit. </p>
+<p>Based upon the usual p-value cut off of 0.05,only the effects of the
+two reagents were statistically significant. The intercept is usually
+not of interest in the physical sense of the model as it only gives
+information about the“0”point of the x-axis. As the chemists suspected,
+the reagents are quite important to the product and the mix speed was
+not. However, the lack of an enzyme and temperature effects is
+surprising and may indicate a flaw in the design. Either the wrong
+values of those factors were chosen the range was not sufficiently wide
+to see the effect), the design was underpowered for those factors
+(Power in this case is taken as: not enough runs to discern a
+difference given that one truly exists), or both. The one interaction
+and the block tests cannot truly be discerned (as to the true effect on
+product) as we have not the resolution to do so with this design.</p>
+
+
+<p>Source:
+http://www.ivtnetwork.com/sites/default/files/First%20Steps%20in%20Experimental%20Design—%20The%20Screening%20Experiment.pdf
+</p>
+
+<div class="pagination">
+<p> <span><strong>Previous</strong></span> <span>1</span> <a href="devtodo">2</a> <a href="devtodo">3</a> <a href="devtodo">4</a>
+<a href="devtodo">5</a> <a href="devtodo"><strong>Next</strong></a> </p>
+<h4>Page 1 of 5</h4>
+</div>
+<hr>
+<div id="footer">
+<p>A note here to go in the footer</p>
+<p> <a href="#">Contact Us</a> | <a href="#">Privacy</a> | <a href="#">Links</a></p>
+</div>
+</div>
+<div id="poweredby"> <a href="http://farcry.daemon.com.au/"> <img src="wsimages/mollio.gif" alt="FarCry - Mollio"> </a> </div>
+</div>
+</div>
+
+</body></html>
